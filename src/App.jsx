@@ -2,7 +2,7 @@ import './App.css';
 //import react hooks
 import { useState, useEffect } from 'react';
 
-const hexInput = "hex="+"0047AB"
+
 // const rgbInput = "rgb(0,71,171)"
 // const cmykInput = "cmyk(100,58,0,33)"
 // const mode= monochroome, monochrome-dark, monochrome-light, analogic, complement, analgoci-complement, triad quad
@@ -10,18 +10,14 @@ const hexInput = "hex="+"0047AB"
 // https://www.thecolorapi.com/docs
 // https://www.thecolorapi.com/scheme?hex=0047AB&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&format=json&mode=analogic&count=6
 // const URL = ` https://www.thecolorapi.com/scheme?${input}&format=json&mode=${mode}&count=${count}`
-const URL = `https://www.thecolorapi.com/scheme?${hexInput}&format=json&mode=analogic&count=4`
+
 
 function App() {
   const [hexInput, setHexInput] = useState('')
+  let urlHexInput = `hex=${setHexInput}`
 
-  const handleSubmit = (e) => { 
-    updateHexInput({
-      ...hexInput,
-    })
-  }
-
-
+  const URL = `https://www.thecolorapi.com/scheme?${urlHexInput}&format=json&mode=analogic&count=4`
+  
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetch(URL);
@@ -32,13 +28,13 @@ function App() {
     }
     fetchData();
   }, []);
-
+ 
   return (
     <div className='App'>
       <header><h1>Color</h1></header>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="hexSearch" onChange={handleChange} value={FormData.searchterm} />
-        <input type="submit" value="submit"></input>
+      <form>
+        <input type="text" value={hexInput} placeholder="Enter Hex Value" onChange={(e) => setHexInput(e.target.value)}/>
+        <input type="submit" value="submit" /*onClick={ handleChange}*/></input> 
       </form> 
 
       <div id="Return">
@@ -53,3 +49,5 @@ function App() {
 }
   
 export default App;
+
+
