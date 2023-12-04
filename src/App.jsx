@@ -10,11 +10,17 @@ const hexInput = "hex="+"0047AB"
 // https://www.thecolorapi.com/docs
 // https://www.thecolorapi.com/scheme?hex=0047AB&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&format=json&mode=analogic&count=6
 // const URL = ` https://www.thecolorapi.com/scheme?${input}&format=json&mode=${mode}&count=${count}`
-const URL = `https://www.thecolorapi.com/scheme?${hexInput}&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&format=json&mode=analogic&count=6`
+const URL = `https://www.thecolorapi.com/scheme?${hexInput}&format=json&mode=analogic&count=4`
 
 function App() {
-  const [hexInput, setHexInput] = useState(0)
-  // const [NJhumidity, NJsetHumidity] = useState(0)
+  const [hexInput, setHexInput] = useState('')
+
+  const handleSubmit = (e) => { 
+    updateHexInput({
+      ...hexInput,
+    })
+  }
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,9 +36,11 @@ function App() {
   return (
     <div className='App'>
       <header><h1>Color</h1></header>
-      <div id="hex">
-         <input type="text" placeholder="Enter Hex Value Here" id="hexText"></input><button>Submit</button>
-      </div>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="hexSearch" onChange={handleChange} value={FormData.searchterm} />
+        <input type="submit" value="submit"></input>
+      </form> 
+
       <div id="Return">
         <div id="one">Example</div>
         <div id="two">Example</div>
