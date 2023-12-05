@@ -9,4 +9,4 @@ function Mode (props) {
   )
 }
 
-export default Mode
+export default Mode;
