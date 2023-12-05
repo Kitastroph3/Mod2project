@@ -1,12 +1,29 @@
 import React from 'react'
 
-function Mode (props) {
+export default function Mode(props) {
+  const mode = [
+    { name: "monochrome" },
+    { name: "monochrome-dark" },
+    { name: "monochrome-light" },
+    { name: "analogic" },
+    { name: "complement" },
+    { name: "analogic-complement" },
+    { name: "triad" },
+    { name: "quad" }
+  ];
+
   return (
-      <div>
-          Mode
-          { props.children}
-      </div>
+    <div className="mode">
+      {mode.map((style) => {
+        const { name } = style;
+      
+        return (
+          // <Link to={"end of address link here" }>
+            <h4>{name}</h4>
+          // </Link>
+        )
+      })}
+    </div>
   )
 }
 
-export default Mode;

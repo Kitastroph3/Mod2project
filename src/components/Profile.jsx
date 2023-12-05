@@ -9,8 +9,9 @@ function Profile() {
       <div id="title">Front-End Developer | UI/UX Designer</div>
       <div id="socialLinks"> 
         <ul>
-          <li>Linkedin</li>
-          <li>Github</li>
+          {/* _blank target means new tab; rel attributes for security purposes prevent opened page from controlling traffic, both attributes do same thing but used together */}
+          <a href='https://www.linkedin.com/' target="_blank" rel="noopener noreferrer">Linkedin</a>
+          <a href="https://github.com/" target='_blank' rel="noopener noreferrer">Github</a>
           <li>Email</li>
         </ul>
       </div>

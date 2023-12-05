@@ -1,14 +1,8 @@
-body {
+#App {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-#hex {
-  height: 20px;
-  width: 150px;
-  display: grid;
-  grid-template-columns: auto auto;
+  margin: 5vh
 }
 
 #mugShot {
@@ -19,9 +13,19 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 50%;
 }
 
 ul {
   display: grid;
   grid-template-columns: auto auto auto;
 }
+
+aside {
+  width: calc(100%/3);
+}
+
+p {
+  font-size: 10pt;
+}
+
