@@ -4,7 +4,7 @@ import axios from 'axios';
 const Colors = () => {
     const [colorScheme, setColorScheme] = useState(null);
     const [hexColor, setHexColor] = useState('');
-    const [mode, setMode] = useState('analogic');
+    const [modeChoice, setModeChoice] = useState('analogic');
 
     useEffect(() => {
         if (hexColor && mode) {
@@ -13,7 +13,7 @@ const Colors = () => {
             setColorScheme(response.data);
             })
             .catch(error => {
-            console.error('Error fetching data:', error);
+            console.error('My palette got mixed up:', error);
             });
         }
     }, [hexColor, mode]);
@@ -23,33 +23,34 @@ const Colors = () => {
     };
 
     const handleModeChange = (event) => { 
-        setMode (event.target.value)
+        setModeChoice (event.target.value)
     }
 
   return (
     <div>
-      <h1>Color Scheme</h1>
-      <input 
-        id="hexColor" 
-        value={hexColor} 
-        onChange={handleChange} 
-        placeholder="Enter Hex Color Code"
-      />
-      {colorScheme ? (
-        <div>
-          {/* Access and display values from the colorScheme object */}
-          <p>Colors:</p>
-          <ul>
-            {colorScheme.colors.map((color, index) => (
-              <li key={index}>{color.hex.value}</li>
-            ))}
-          </ul>
+        <h1>Color Scheme</h1>
+        <input 
+            id="hexColor" 
+            value={hexColor} 
+            onChange={handleChange} 
+            placeholder="Enter Hex Color Code"
+        />
+        
+          <select id="modeDropdown" value={mode} onChange={handleModeChange}>
+              {/* <option value="analogic">{mode}</> */}
+          </select>
+            
+          <div>
+            <p>Colors:</p>
+            <ul>
+                {colorScheme.colors.map((color, index) => (
+                <li key={index}>{color.hex.value}</li>
+                ))}
+            </ul>
+            </div>
+        
         </div>
-      ) : (
-        <p>Please enter a hex color code.</p>
-      )}
-    </div>
-  );
-};
+    );
+    };
 
 export default Colors;
