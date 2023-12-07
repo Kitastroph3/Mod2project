@@ -5,8 +5,8 @@ const Colors = () => {
   //variables for api call
   const [hexColor, setHexColor] = useState('');
   const [modeScheme, setModeScheme] = useState('');
-  //api response
   
+  //api response
   const [color1, setColor1] = useState('');
   const [color2, setColor2] = useState('');
   const [color3, setColor3] = useState('');
