@@ -1,8 +1,13 @@
 import React from 'react'
+import Portfolio from '../pages/Portfolio'
+import About from '../pages/notusedAbout'
 
 function TopNav () {
   return (
-    <div>TopNav</div>
+    <nav>
+      <About />
+      <Portfolio />
+    </nav>
   )
 }
 
