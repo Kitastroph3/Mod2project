@@ -21,10 +21,14 @@ function CreateUser() {
   useEffect(() => {
     axios.get(`https://app.zipcodebase.com/api/v1/search?apikey=${apikey}&codes=${location}&country=us`)
       .then(response => {
-        const city = response.data.results[0].city;
-        const state = response.data.results[0].state;
-        setCity(city);
-        setState(state);
+        const results = response.data.results
+        console.log(results)
+        const cityresponse = response.data.results[0][0][1];
+        const stateresponse = response.data.results[0][0].state;
+        console.log(cityresponse);
+        console.log(stateresponse);
+        setCity(cityresponse);
+        setState(stateresponse);
       })
       .catch(error => {
         console.log("There was a problem finding home: ", error);
