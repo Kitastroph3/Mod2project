@@ -53,8 +53,8 @@ const Colors = () => {
   ]
 
   return (
-    <div>
-      <div>
+    <div id ="colorPicker">
+      <div id="apiInputs">
         <select value={modeScheme} onChange={handleModeChange}>
           {modeOptions.map((mode, index) => (
             <option key={index} value={mode.key}>{mode.value}</option>))}

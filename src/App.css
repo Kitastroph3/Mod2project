@@ -29,3 +29,11 @@ p {
   font-size: 10pt;
 }
 
+#apiInputs {
+  display: flex;
+  flex-direction: column;
+}
+
+#colorPicker {
+  margin: 20px;
+}
