@@ -42,12 +42,12 @@ const Colors = () => {
   };
     
   const modeOptions = [
+    { key: "analogic", value: "Analogic" },
+    { key: "analogic-complement", value: "Analogic Complement" },
+    { key: "complement", value: "Complement" },
     { key: "monochrome", value: "Monochrome" },
     { key: "monochrome-dark", value: "Monochrome Dark" },
     { key: "monochrome-light", value: "Monochrome Light" },
-    { key: "analogic", value: "Analogic" },
-    { key: "complement", value: "Complement" },
-    { key: "analogic-complement", value: "Analogic Complement" },
     { key: "triad", value: "Triad" },
     { key: "quad", value: "Quad" }
   ]
@@ -55,20 +55,23 @@ const Colors = () => {
   return (
     <div id ="colorPicker">
       <div id="apiInputs">
+        {/* 1 */}
         <select value={modeScheme} onChange={handleModeChange}>
           {modeOptions.map((mode, index) => (
             <option key={index} value={mode.key}>{mode.value}</option>))}
         </select>
-          
+        
+        {/* 2 */}
         <input id="hexColor" value={hexColor} placeholder="Enter Hex Color ex(084890)" onChange={handleHexChange} />
       </div>
 
-      <div>
-        <p>Colors:</p>
-        <div id="color1">{color1}</div>
-        <div id="color2">{color2}</div>
-        <div id="color3">{color3}</div>
-        <div id="color4">{color4}</div>
+      <div id="colorOutput">
+        {/* 3 Output */}
+        <div id="colorD" style={{ backgroundColor: "#" + hexColor }}>{hexColor}</div>
+        <div id="color1" style={{ backgroundColor: color1  }}>{color1}</div>
+        <div id="color2" style={{ backgroundColor: color2}}>{color2}</div>
+        <div id="color3" style={{ backgroundColor: color3}}>{color3}</div>
+        <div id="color4" style={{ backgroundColor: color4} }>{color4}</div>
       </div>
     </div>
   );
