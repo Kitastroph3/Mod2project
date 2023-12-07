@@ -15,23 +15,21 @@ function CreateUser() {
   const music = faker.music.genre();
   // const location = faker.location.zipCode('#####');
   const location = '08828'
-  
 
   const apikey = "27738e80-9554-11ee-82ee-999cd3256f0f"
   // location api from metadapi.com
   useEffect(() => {
-    axios.get(`https://app.zipcodebase.com/api/v1/search?apikey=${apikey}&codes=${location}&country=us`, {
-    })
-    .then(response => {
-      const city = response.data.city;
-      const state = response.data.state;
-      setCity(city);
-      setState(state);
-    })
-    .catch(error => {
-      console.log("There was a problem finding home: ", error);
-    });
-  }, [location]);
+    axios.get(`https://app.zipcodebase.com/api/v1/search?apikey=${apikey}&codes=${location}&country=us`)
+      .then(response => {
+        const city = response.data.results[0].city;
+        const state = response.data.results[0].state;
+        setCity(city);
+        setState(state);
+      })
+      .catch(error => {
+        console.log("There was a problem finding home: ", error);
+      });
+  }, [location, apikey]);
 
   return (
     <div id="User">
