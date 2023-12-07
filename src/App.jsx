@@ -6,8 +6,11 @@ import "./App.css";
 function App () {
   return (
     <div id="App">
-      <Colors />
-      {/* <CreateUser /> */}
+      <div>UI/UX Helper</div>
+      <div>
+        <Colors />
+        <CreateUser />
+      </div>
     </div>
   )
 }

@@ -1,28 +1,51 @@
 import { faker } from '@faker-js/faker';
-import React from 'react';
-//installed as extension, no json link, but I needed something else to make this an actual project
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
 function CreateUser() {
-    const sex = faker.person.gender();
-    const firstName = faker.person.firstName(sex);
-    const lastName = faker.person.lastName();
-    const birthdate = faker.date.birthdate();
-    const jobTitle = faker.person.jobTitle();
-    const bio = faker.person.bio();
-    const music = faker.music.genre();
-    const location = faker.location.zipcode();
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+
+  // user info from faker
+  const sex = faker.person.sex();
+  const firstName = faker.person.firstName(sex);
+  const lastName = faker.person.lastName();
+  const jobTitle = faker.person.jobTitle();
+  const bio = faker.person.bio();
+  const music = faker.music.genre();
+  // const location = faker.location.zipCode('#####');
+  const location = '08828'
+  
+
+  const apikey = "27738e80-9554-11ee-82ee-999cd3256f0f"
+  // location api from metadapi.com
+  useEffect(() => {
+    axios.get(`https://app.zipcodebase.com/api/v1/search?apikey=${apikey}&codes=${location}&country=us`, {
+    })
+    .then(response => {
+      const city = response.data.city;
+      const state = response.data.state;
+      setCity(city);
+      setState(state);
+    })
+    .catch(error => {
+      console.log("There was a problem finding home: ", error);
+    });
+  }, [location]);
 
   return (
     <div id="User">
-      <div>{firstName}</div>
-      <div>{lastName}</div>
-      <div>{birthdate}</div>
-      <div>{sex}</div>
-      <div>{location}</div>
+      <div>{firstName} {lastName}</div>
+      <div>{sex}</div> 
+      <div>{city}, {state}</div>
       <div>{jobTitle}</div>
-      <div>{bio}</div>
-      <div>{music}</div>
-  </div>
-  )
+      <div>
+        <div>Bio:</div>
+        <div>{bio}</div>
+      </div>
+      <div>Music: {music}</div> 
+    </div>
+  );
 }
 
 export default CreateUser;
