@@ -8,3 +8,24 @@
 #colorPicker {
   margin: 20px;
 }
+
+#layout {
+  display: flex;
+}
+
+.color {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin: 10px;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconfill {
+  background-size: contain;
+  background-image: url(https://cdn1.iconfinder.com/data/icons/construction-tools-glyph-silhouettes/300/225846415Untitled-3-512.png);
+  height: 80px;
+  width: 80px;
+}

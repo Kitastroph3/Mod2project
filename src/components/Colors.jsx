@@ -77,11 +77,21 @@ const Colors = () => {
 
       <div id="colorOutput">
         {/* 3 Output */}
-        <div id="colorD" style={{ backgroundColor: "#" + hexColor }}>{hexColor}</div>
-        <div id="color1" style={{ backgroundColor: color1  }}>{color1}</div>
-        <div id="color2" style={{ backgroundColor: color2}}>{color2}</div>
-        <div id="color3" style={{ backgroundColor: color3}}>{color3}</div>
-        <div id="color4" style={{ backgroundColor: color4} }>{color4}</div>
+        <div id="colorD" style={{ backgroundColor: "#" + hexColor }}>#{hexColor}</div>
+        <div id="layout">
+          <div className="color" style={{ backgroundColor: color1}}>
+            <div className='iconfill'></div>
+          </div>
+          <div className="color" style={{ backgroundColor: color2 }}>
+          <div className='iconfill'></div>
+          </div>
+          <div className="color" style={{ backgroundColor: color3 }}>
+            <div className='iconfill'></div>
+          </div>
+          <div className="color" style={{ backgroundColor: color4 }}>
+            <div className='iconfill'></div>
+          </div>
+        </div>
       </div>
     </div>
   );
