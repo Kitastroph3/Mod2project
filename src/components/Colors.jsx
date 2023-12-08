@@ -78,11 +78,12 @@ const Colors = () => {
         
         {/* 1B */}
         <input id="hexColor" value={hexColor} placeholder="Enter Hex Color ex(084890)" onChange={handleHexChange} style={{ backgroundColor: "#" + hexColor }}/>
-      </div>
+      
         
         {/* 2 button to run modescheme and hexcolor functions*/}
       <button onClick={handleClick}>Get ColorScheme</button>
-
+      </div>
+      
       <div id="colorOutput">
         {/* 3 Output */}
         <div id="layout">
