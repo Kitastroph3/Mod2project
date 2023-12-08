@@ -71,17 +71,26 @@ const Colors = () => {
     <div id ="colorPicker">
       <div id="apiInputs">
         {/* 1A */}
-        <select value={modeScheme} onChange={handleModeChange}>
+        <div className='colorGrid'>
+          <div>Choose a color scheme:</div>
+          <select id="modeSelect" value={modeScheme} onChange={handleModeChange}>
           {modeOptions.map((mode, index) => (
             <option key={index} value={mode.key}>{mode.value}</option>))}
         </select>
-        
+        </div>
+
         {/* 1B */}
-        <input id="hexColor" value={hexColor} placeholder="Enter Hex Color ex(084890)" onChange={handleHexChange} style={{ backgroundColor: "#" + hexColor }}/>
-      
+        <div className='colorGrid'>
+          <div>Type a hex color value: </div>
+          <input id="hexColor" value={hexColor} placeholder="ex: 'CCCC33'" onChange={handleHexChange} style={{ backgroundColor: "#" + hexColor }}/>
+        </div>
         
         {/* 2 button to run modescheme and hexcolor functions*/}
-      <button onClick={handleClick}>Get ColorScheme</button>
+        <div className='colorGrid'>
+          <div>Find your matches:</div>
+          <button id="colorBtn" onClick={handleClick}>Make Palette</button>
+        </div>  
+        
       </div>
       
       <div id="colorOutput">

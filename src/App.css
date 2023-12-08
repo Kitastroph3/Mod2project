@@ -5,8 +5,15 @@
   margin: 5vh
 } */
 
-body {
-  font-family: Verdana
+body, html {
+  display: flex;
+  flex-direction: column;
+  font-family: Verdana;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 #colorPicker {
@@ -20,11 +27,14 @@ body {
 .color {
   height: 100px;
   width: 100px;
-  border-radius: 50%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
   margin: 10px;  
+  margin-bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  bottom: 0;
 }
 
 .iconfill {
@@ -56,9 +66,11 @@ body {
 .bg{
   background-color: whitesmoke;
   padding: 20px;
-  border-top-right-radius: 80%;
-  /* border-bottom-right-radius: 100%; */
-  width: 100;
+  border: none;
+  /* border-top-right-radius: 80%; */
+  /* border-bottom-right-radius: 50% 100%; */
+  width: 65%;
+  border-top-right-radius: 50% 100%;
 }
 
 .userName {
@@ -103,15 +115,35 @@ body {
   align-items: center;
 }
 
-#apiInputs > * {
-  width: 150px;
-  padding: 3px;
-  margin: 5px;
-  height: 33px;
-}
-
 #hexColor {
   width: 141px;
   padding-left: 5px;
-  height: 25px;
+  height:25px;
+}
+
+#colorBtn {
+  height: 30px;
+  width: 151px;
+}
+
+.colorGrid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  width: 375px;
+  height: 35px;
+  align-items: center;
+  margin: 5px;
+}
+
+#modeSelect {
+  height: 30px;
+  width: 151px;
+}
+
+.colorGrid > * {
+  margin: 10px;
+}
+
+#layout {
+  margin: 20px;
 }
