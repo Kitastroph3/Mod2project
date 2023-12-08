@@ -1,6 +1,6 @@
 import React from 'react';
 import "./App.css";
-// import CreateUser from './components/CreateUser';
+import CreateUser from './components/CreateUser';
 import Colors from './components/Colors';
 
 function App () {
@@ -8,7 +8,7 @@ function App () {
     <div id="App">
       <div>UI/UX Helper</div>
       <div>
-        {/* <CreateUser /> */}
+        <CreateUser />
         <Colors />
       </div>
     </div>

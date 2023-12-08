@@ -15,7 +15,6 @@ const ZipCodeAPI = () => {
     axios.get(`https://app.zipcodebase.com/api/v1/search?apikey=${apikey}&codes=${location}&country=us`)
       .then(response => {
         const zipCode = location
-        // console.log(response.data.results[zipCode][0].city)
         const cityresponse = response.data.results[zipCode][0].city;
         const stateresponse = response.data.results[zipCode][0].state;
         setCity(cityresponse);

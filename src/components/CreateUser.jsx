@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
 import ZipCodeAPI from './ZipcodeAPI';
+import DobAPI from './DobAPI';
 
 const CreateUser = () => {
   // user info from faker
@@ -14,7 +15,8 @@ const CreateUser = () => {
   return (
     <div id="User">
       <div>{firstName} {lastName}</div>
-      <div>{sex}</div> 
+      <div>{sex}</div>
+      <DobAPI />
       <ZipCodeAPI />
       <div>{jobTitle}</div>
       <div>
