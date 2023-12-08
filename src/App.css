@@ -1,38 +1,9 @@
-#App {
+/* #App {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 5vh
-}
-
-#mugShot {
-  background-image: url("https://mighty.tools/mockmind-api/content/human/32.jpg");
-  height: 200px;
-  width: 200px;
-  border: solid orange;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 50%;
-}
-
-ul {
-  display: grid;
-  grid-template-columns: auto auto auto;
-}
-
-aside {
-  width: calc(100%/3);
-}
-
-p {
-  font-size: 10pt;
-}
-
-#apiInputs {
-  display: flex;
-  flex-direction: column;
-}
+} */
 
 #colorPicker {
   margin: 20px;
