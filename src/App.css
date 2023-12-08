@@ -77,7 +77,12 @@ body {
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  position: absolute;
+  position: fixed;
   top: 0;
   box-shadow: 2px 0px 5px lightgray;
+}
+
+#mainContainer {
+  position: relative;
+  top: 60px;
 }
