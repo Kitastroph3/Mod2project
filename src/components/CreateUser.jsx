@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
-import ZipCodeAPI from './ZipcodeAPI';
-import DobAPI from './DobAPI';
+// import ZipCodeAPI from './ZipcodeAPI';
+// import DobAPI from './DobAPI';
 
 const CreateUser = () => {
   // user info from faker
@@ -11,19 +11,20 @@ const CreateUser = () => {
   const bio = faker.person.bio();
   const music = faker.music.genre();
   // const adjective = faker.word.adjective();
+  const firstLetter = bio.charAt(0);
+  const bioRest = bio.substring(1);
+  const biography = firstLetter.toUpperCase() + bioRest
 
   return (
-    <div id="User">
-      <div>{firstName} {lastName}</div>
-      <div>{sex}</div>
-      <DobAPI />
-      <ZipCodeAPI />
-      <div>{jobTitle}</div>
-      <div>
-        <div>Bio:</div>
-        <div>{bio}</div>
-      </div>
+    <div className="User">
+      <div className='bg'>
+      <div className="userName">{firstName} {lastName}</div>
+      {/* <DobAPI />
+      <ZipCodeAPI /> */}
+      <div className='userJob'>{jobTitle}</div>
+      <div>Bio: {biography}</div>
       <div>Music: {music}</div> 
+    </div>
     </div>
   );
 }
