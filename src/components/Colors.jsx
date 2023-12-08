@@ -47,6 +47,14 @@ const Colors = () => {
   const handleClick = () => { 
     fetchScheme()
   }
+
+  const invert = (event) => {
+    if (event.currentTarget.style.filter) {
+      event.currentTarget.style.filter = null
+    } else {
+      event.currentTarget.style.filter = "invert(100%)"
+    }
+  }
     
   const modeOptions = [
     { key: "analogic", value: "Analogic" },
@@ -69,7 +77,7 @@ const Colors = () => {
         </select>
         
         {/* 1B */}
-        <input id="hexColor" value={hexColor} placeholder="Enter Hex Color ex(084890)" onChange={handleHexChange} />
+        <input id="hexColor" value={hexColor} placeholder="Enter Hex Color ex(084890)" onChange={handleHexChange} style={{ backgroundColor: "#" + hexColor }}/>
       </div>
         
         {/* 2 button to run modescheme and hexcolor functions*/}
@@ -77,19 +85,18 @@ const Colors = () => {
 
       <div id="colorOutput">
         {/* 3 Output */}
-        <div id="colorD" style={{ backgroundColor: "#" + hexColor }}>#{hexColor}</div>
         <div id="layout">
           <div className="color" style={{ backgroundColor: color1}}>
-            <div className='iconfill'></div>
+            <div className='iconfill' onClick={invert}></div>
           </div>
           <div className="color" style={{ backgroundColor: color2 }}>
-          <div className='iconfill'></div>
+            <div className='iconfill' onClick={invert}></div>
           </div>
           <div className="color" style={{ backgroundColor: color3 }}>
-            <div className='iconfill'></div>
+            <div className='iconfill' onClick={invert}></div>
           </div>
           <div className="color" style={{ backgroundColor: color4 }}>
-            <div className='iconfill'></div>
+            <div className='iconfill' onClick={invert}></div>
           </div>
         </div>
       </div>
