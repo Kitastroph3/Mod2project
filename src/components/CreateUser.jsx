@@ -6,27 +6,18 @@ function CreateUser() {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
 
-  // user info from faker
-  const sex = faker.person.sex();
-  const firstName = faker.person.firstName(sex);
-  const lastName = faker.person.lastName();
-  const jobTitle = faker.person.jobTitle();
-  const bio = faker.person.bio();
-  const music = faker.music.genre();
-  // const location = faker.location.zipCode('#####');
-  const location = '08828'
-
-  const apikey = "27738e80-9554-11ee-82ee-999cd3256f0f"
+  const location = faker.location.zipCode('#####');
+  // const location = '08828'
+  
   // location api from metadapi.com
+  const apikey = "27738e80-9554-11ee-82ee-999cd3256f0f"
   useEffect(() => {
     axios.get(`https://app.zipcodebase.com/api/v1/search?apikey=${apikey}&codes=${location}&country=us`)
       .then(response => {
-        const results = response.data.results
-        console.log(results)
-        const cityresponse = response.data.results[0][0][1];
-        const stateresponse = response.data.results[0][0].state;
-        console.log(cityresponse);
-        console.log(stateresponse);
+        const zipCode = location
+        // console.log(response.data.results[zipCode][0].city)
+        const cityresponse = response.data.results[zipCode][0].city;
+        const stateresponse = response.data.results[zipCode][0].state;
         setCity(cityresponse);
         setState(stateresponse);
       })
@@ -34,6 +25,14 @@ function CreateUser() {
         console.log("There was a problem finding home: ", error);
       });
   }, [location, apikey]);
+
+  // user info from faker
+  const sex = faker.person.sex();
+  const firstName = faker.person.firstName(sex);
+  const lastName = faker.person.lastName();
+  const jobTitle = faker.person.jobTitle();
+  const bio = faker.person.bio();
+  const music = faker.music.genre();
 
   return (
     <div id="User">
