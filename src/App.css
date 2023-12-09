@@ -33,6 +33,28 @@ body, html {
   display: flex;
 }
 
+#Home {
+  background-image: url(bgmain.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  height: 500px;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+#intro {
+  background-image: url(QuickLazyFox.png);
+  height: 500px;
+  width: 600px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
 .color {
   height: 100px;
   width: 100px;
@@ -97,7 +119,7 @@ body, html {
 
 header {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 50% 50%;
   position: fixed;
   width: 100vw;
   padding-left: 10px;
