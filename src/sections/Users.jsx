@@ -2,11 +2,9 @@ import CreateUser from "../components/CreateUser";
 
 const Users = () => {
     return (
-        <div id="Users">
+        <section id="Users">
             <CreateUser />
-            <CreateUser />
-            <CreateUser />
-        </div>
+        </section>
   )
 }
 

@@ -3,9 +3,9 @@ import Colors from '../components/Colors'
 
 const ColorScheme = () => {
   return (
-      <div id="colorContainer">
+      <section id="colorContainer">
           <Colors />
-      </div>
+      </section>
   )
 }
 

@@ -14,17 +14,25 @@ const CreateUser = () => {
   const firstLetter = bio.charAt(0);
   const bioRest = bio.substring(1);
   const biography = firstLetter.toUpperCase() + bioRest
+  const avatar = faker.image.avatar();
+
+  //-----------Images upload for avatars----------
+  
+  // const maleAvatars = []
 
   return (
     <div className="User">
       <div className='bg'>
-      <div className="userName">{firstName} {lastName}</div>    
-      <div className='userJob'>{jobTitle}</div>
-        <DobAPI />
-        <ZipCodeAPI />
-      <div>Bio: {biography}</div>
-      <div>Music: {music}</div> 
-    </div>
+        <div className="userName">{firstName} {lastName}</div>
+        <div className='userJob'>Job: {jobTitle}</div>
+        DOB: <DobAPI />
+        Location: <ZipCodeAPI />
+        <div>Bio: {biography}</div>
+        <div>Music: {music}</div> 
+      </div>
+      <div className='avatar'>
+        <img src={avatar} alt={lastName} />
+      </div>
     </div>
   );
 }
