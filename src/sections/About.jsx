@@ -1,9 +1,10 @@
 import React from 'react'
-
+import QuickLazyFox from '../QuickLazyFox.png'
+  
 const About = () => {
   return (
       <section id="Home">
-        <div id="intro"> </div>
+      <img id="titleblock" src={ QuickLazyFox} alt="Quick Lazy Fox"/>
       </section>
   )
 }

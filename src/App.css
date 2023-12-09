@@ -34,25 +34,19 @@ body, html {
 }
 
 #Home {
-  background-image: url(bgmain.jpg);
+  background-image: url(clouds.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  height: 500px;
   flex-direction: column;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 #intro {
-  background-image: url(QuickLazyFox.png);
   height: 500px;
   width: 600px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
 }
 
 .color {
@@ -92,7 +86,6 @@ body, html {
   box-sizing: inherit;
   position: relative;
   max-width: 900px;
-  background-image: url(backgroundbg.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
