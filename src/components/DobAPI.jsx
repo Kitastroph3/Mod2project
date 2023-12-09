@@ -26,11 +26,10 @@ const DobAPI = () => {
       });
   }, []);
 
+  const birthday = `${month}-${day}-${year}`
+
   return (
-        <div>
-          <div>{age}</div>
-          <div>{month}-{day}-{year}</div>
-        </div>
+    age, birthday
   )
 }
 export default DobAPI;

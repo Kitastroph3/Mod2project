@@ -26,9 +26,7 @@ const ZipCodeAPI = () => {
   }, [location, apikey]);
 
   return (
-        <div>
           { city }, { state }
-        </div>
   )
 }
 export default ZipCodeAPI;
