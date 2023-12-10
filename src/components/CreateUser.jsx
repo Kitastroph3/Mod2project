@@ -122,8 +122,8 @@ const CreateUser = () => {
       )}
 
       <div id="userButtons">
-        <button onClick={handlePrevious}>Previous</button>
-        <button onClick={handleNext}>Next</button>
+        <button className='peepbtns' id="btnback" onClick={handlePrevious}>Previous</button>
+        <button className='peepbtns' id="newbtn" onClick={handleNext}>Create</button>
       </div>
     </div>
   );

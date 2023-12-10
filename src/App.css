@@ -83,10 +83,10 @@ body, html {
 .User {
   margin: 20px;
   display: grid;
-  background-color: #fae5ca;
+  background-color: #777574;
   padding: 20px;
   width: 100;
-  height: 200px;
+  height: 250px;
   box-sizing: inherit;
   position: relative;
   max-width: 900px;
@@ -98,8 +98,9 @@ body, html {
   background-color: whitesmoke;
   padding: 20px;
   border: none;
+  display: grid;
   width: 65%;
-  border-top-right-radius: 50% 100%;
+  /* border-top-right-radius: 50% 100%; */
   bottom: 0;
 }
 
@@ -225,3 +226,29 @@ a:visited {
   margin: 30px;
 }
 
+.peepbtns {
+  font-family: bebas;
+  width: 100px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  font-size: 12pt;
+  letter-spacing: .25em;
+  padding: 10px;
+}
+
+#btnback {
+  position: absolute;
+  bottom: 0;
+}
+
+#newbtn {
+  position: absolute;
+  left: 120px;
+  bottom: 0;
+}
+
+.peepbtns:hover {
+  cursor: pointer;
+  color: rgb(115, 113, 113);
+}
