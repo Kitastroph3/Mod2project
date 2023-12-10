@@ -11,5 +11,4 @@ const dudePicsArray = [
     dude1, dude2, dude3, dude4, dude5, dude6, dude7
 ]
 
-module.exports = dudePicsArray
-    
+export default dudePicsArray;    

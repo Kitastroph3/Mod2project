@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { faker } from '@faker-js/faker';
-// import dudePicsArray from '../models/dudePicsArray';
-// import femalePicsArray from '../models/femalePicsArray;'
+import dudePicsArray from '../models/dudePicsArray';
+import femalePicsArray from '../models/femalePicsArray';
 
 
 const CreateUser = () => {
@@ -58,12 +58,22 @@ const CreateUser = () => {
       const firstName = faker.person.firstName(sex);
       const lastName = faker.person.lastName();
       const jobTitle = faker.person.jobTitle();
-      const bio = faker.person.bio();
       const music = faker.music.genre();
-      const firstLetter = bio.charAt(0);
-      const bioRest = bio.substring(1);
+        const bio = faker.person.bio();
+        const firstLetter = bio.charAt(0);
+        const bioRest = bio.substring(1);
       const biography = firstLetter.toUpperCase() + bioRest;
 
+      let avatar = '';
+        if (sex === "male") {
+          const index = Math.floor(Math.random() * dudePicsArray.length)
+          avatar = dudePicsArray[index];
+        } else {
+          const indexF = Math.floor(Math.random() * femalePicsArray.length)
+          avatar = femalePicsArray[indexF];
+        }
+    
+    
       const newPersona = {
         firstName,
         lastName,
@@ -72,6 +82,7 @@ const CreateUser = () => {
         dob: { birthday: dob.birthday, age: dob.age },
         bio: biography,
         music,
+        avatar,
       };
 
       setPersonas([...personas, newPersona]);
@@ -110,15 +121,20 @@ const CreateUser = () => {
     <div className="User">
     {/* will not work unless compoenent is wrapped. Checks for "truthy value" */}
       {currentPersona && (
-        <div className='bg'>
-          <div className="userName">{currentPersona.firstName} {currentPersona.lastName}</div>
-          <div className='userInfo'>Age: {currentPersona.dob.age}</div>
-          <div className='userInfo'>Birthday: {currentPersona.dob.birthday}</div>
-          <div className='userInfo'>Location: {currentPersona.location.city}, {currentPersona.location.state}</div>
-          <div className='userInfo'>Job: {currentPersona.jobTitle}</div>
-          <div className='userInfo'>Bio: {currentPersona.bio}</div>
-          <div className='userInfo'>Likes: {currentPersona.music}</div>
-        </div>
+        <>
+          <div className='bg'>
+            <div className="userName">{currentPersona.firstName} {currentPersona.lastName}</div>
+            <div className='userInfo'>Age: {currentPersona.dob.age}</div>
+            <div className='userInfo'>Birthday: {currentPersona.dob.birthday}</div>
+            <div className='userInfo'>Location: {currentPersona.location.city}, {currentPersona.location.state}</div>
+            <div className='userInfo'>Job: {currentPersona.jobTitle}</div>
+            <div className='userInfo'>Bio: {currentPersona.bio}</div>
+            <div className='userInfo'>Likes: {currentPersona.music}</div>
+          </div>
+          <div>
+            <img src={currentPersona.avatar} alt={currentPersona.lastName} />
+          </div>
+        </>
       )}
 
       <div id="userButtons">

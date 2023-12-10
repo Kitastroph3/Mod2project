@@ -4,8 +4,8 @@ const Users = () => {
     return (
             <section id="Users">
             <CreateUser />
-            <CreateUser />
-            <CreateUser />
+            {/* <CreateUser />
+            <CreateUser /> */}
             </section>
         );
     }

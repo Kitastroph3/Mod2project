@@ -11,5 +11,4 @@ const femalePicsArray = [
     image1, image2, image3, image4, image5, image6, image7
 ]
 
-module.exports = femalePicsArray
-    
+export default femalePicsArray;    
