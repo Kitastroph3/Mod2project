@@ -121,20 +121,22 @@ const CreateUser = () => {
     <div className="User">
     {/* will not work unless compoenent is wrapped. Checks for "truthy value" */}
       {currentPersona && (
-        <>
+        <div className='personCard'>
           <div className='bg'>
-            <div className="userName">{currentPersona.firstName} {currentPersona.lastName}</div>
-            <div className='userInfo'>Age: {currentPersona.dob.age}</div>
-            <div className='userInfo'>Birthday: {currentPersona.dob.birthday}</div>
-            <div className='userInfo'>Location: {currentPersona.location.city}, {currentPersona.location.state}</div>
-            <div className='userInfo'>Job: {currentPersona.jobTitle}</div>
-            <div className='userInfo'>Bio: {currentPersona.bio}</div>
-            <div className='userInfo'>Likes: {currentPersona.music}</div>
+            <div className='personinfo'>
+              <div className="userName">{currentPersona.firstName} {currentPersona.lastName}</div>
+              <div className='userInfo'>Age: {currentPersona.dob.age}</div>
+              <div className='userInfo'>Birthday: {currentPersona.dob.birthday}</div>
+              <div className='userInfo'>Location: {currentPersona.location.city}, {currentPersona.location.state}</div>
+              <div className='userInfo'>Job: {currentPersona.jobTitle}</div>
+              <div className='userInfo'>Bio: {currentPersona.bio}</div>
+              <div className='userInfo'>Likes: {currentPersona.music}</div>
+            </div>
+            <div>
+              <img className="avatar" src={currentPersona.avatar} alt={currentPersona.lastName} />
+            </div>
           </div>
-          <div>
-            <img src={currentPersona.avatar} alt={currentPersona.lastName} />
-          </div>
-        </>
+        </div>
       )}
 
       <div id="userButtons">
