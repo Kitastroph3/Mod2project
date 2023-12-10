@@ -3,9 +3,10 @@ import QuickLazyFox from '../downloads/QuickLazyFox.png'
   
 const About = () => {
   return (
-      <section id="Home">
+    <section id="Home">
       <img id="titleblock" src={QuickLazyFox} alt="Quick Lazy Fox"/>
-      </section>
+      <div>A resource for jumpstarting user research and front end design</div>  
+    </section>
   )
 }
 
