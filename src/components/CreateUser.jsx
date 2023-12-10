@@ -1,55 +1,94 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { faker } from '@faker-js/faker';
-// import ZipCodeAPI from './ZipcodeAPI';
-// import DobAPI from './DobAPI';
 
 const CreateUser = () => {
-  // create state to holder data of users
   const [personas, setPersonas] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  //create user persona
-  const makePersona = () => {
-    const sex = faker.person.sex();
-    const firstName = faker.person.firstName(sex);
-    const lastName = faker.person.lastName();
-    const jobTitle = faker.person.jobTitle();
-    const music = faker.music.genre();
-    ///make bio legible    
-        const bio = faker.person.bio();
-        const firstLetter = bio.charAt(0);
-        const bioRest = bio.substring(1);
-    const biography = firstLetter.toUpperCase() + bioRest;
-
-    // const { city, state } = ZipCodeAPI.//logic logic
-    // const { birthday, age } = DobAPI.//logic logic
-
-    // make persona
-    const newPersona = {
-      firstName,
-      lastName,
-      jobTitle,
-      // dob: {birthday, age},
-      // location: {city, state},
-      bio: biography,
-      music,
-    };
-
-    setPersonas([...personas, newPersona]);
+  //=========================================APIS!!!!!======
+  //creat random date of birth to attach to user
+  const getDOB = async () => {
+    try {
+      const response = await axios.get('https://randomuser.me/api/?inc=dob&results=1');
+      const birthday = response.data.results[0].dob.date.substring(0, 10);
+      const age = response.data.results[0].dob.age;
+      return { birthday, age };
+    } catch (error) {
+      console.log("Could not read Driver's License ", error);
+      return null;
+    }
   };
 
+  //create randomized location to attach to user
+  const getLocation = async () => {
+    const zipCode = faker.location.zipCode('#####');
+    const apikey = "27738e80-9554-11ee-82ee-999cd3256f0f";
+    console.log(zipCode)
+    try {
+      const response = await axios.get(`https://app.zipcodebase.com/api/v1/search?apikey=${apikey}&codes=${zipCode}&country=us`);
+      const city = response.data.results[zipCode][0].city;
+      const state = response.data.results[zipCode][0].state;
+      return { city, state };
+    } catch (error) {
+      console.log("Couldn't read the US passport. Trying again.");
+      try {
+        const response = await axios.get(`https://app.zipcodebase.com/api/v1/search?apikey=${apikey}&codes=${zipCode}`);
+        const city = response.data.results[zipCode][0].city;
+        const state = response.data.results[zipCode][0].state;
+        return { city, state };
+      } catch (error) {
+        console.log("Sorry, my compass is broken.");
+        return null;
+      }
+    }
+  };
+
+  //=====================================Logic to make a Persona
+  //create persona once api calls are successful
+  const makePersona = async () => {
+    const dob = await getDOB();
+    const location = await getLocation();
+    
+    if (dob && location) {
+      const sex = faker.person.sex();
+      const firstName = faker.person.firstName(sex);
+      const lastName = faker.person.lastName();
+      const jobTitle = faker.person.jobTitle();
+      const bio = faker.person.bio();
+      const music = faker.music.genre();
+      const firstLetter = bio.charAt(0);
+      const bioRest = bio.substring(1);
+      const biography = firstLetter.toUpperCase() + bioRest;
+
+      const newPersona = {
+        firstName,
+        lastName,
+        jobTitle,
+        location: { city: location.city, state: location.state },
+        dob: { birthday: dob.birthday, age: dob.age },
+        bio: biography,
+        music,
+      };
+
+      setPersonas([...personas, newPersona]);
+    }
+  };
+  
+  //=============================================Load Persona
+  //call the makepersona function to run one the componenet loads
   useEffect(() => {
     makePersona();
   }, []);
 
-
-  //maybe I can separate out these button functions?
+  //================================================buttons
   const handlePrevious = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
     }
   };
-  
+
+  //create a new persona and then add it to the makepersona array
   const handleNext = () => {
     if (currentIndex < personas.length - 1) {
       setCurrentIndex(currentIndex + 1);
@@ -59,6 +98,7 @@ const CreateUser = () => {
     }
   };
 
+  //================================Array of generate Personas
   const currentPersona = personas[currentIndex];
 
   return (
@@ -66,20 +106,21 @@ const CreateUser = () => {
       {currentPersona && (
         <div className='bg'>
           <div className="userName">{currentPersona.firstName} {currentPersona.lastName}</div>
-          <div className='userJob'>Job: {currentPersona.jobTitle}</div>
-          {/* DOB:  {currentPersona.dob.birthday},
-          Age: {currentPersona.dob.age}
-          Location: {currentPersona.location.city}, {currentPersona.location.state} */}
-          <div>Bio: {currentPersona.bio}</div>
-          <div>Likes: {currentPersona.music}</div>
+          <div className='userInfo'>Age: {currentPersona.dob.age}</div>
+          <div className='userInfo'>Birthday: {currentPersona.dob.birthday}</div>
+          <div className='userInfo'>Location: {currentPersona.location.city}, {currentPersona.location.state}</div>
+          <div className='userInfo'>Job: {currentPersona.jobTitle}</div>
+          <div className='userInfo'>Bio: {currentPersona.bio}</div>
+          <div className='userInfo'>Likes: {currentPersona.music}</div>
         </div>
       )}
 
-      <button onClick={handlePrevious}>Previous</button>
-      <button onClick={handleNext}>Next</button>
-
+      <div id="userButtons">
+        <button onClick={handlePrevious}>Previous</button>
+        <button onClick={handleNext}>Next</button>
+      </div>
     </div>
   );
-}
+};
 
 export default CreateUser;

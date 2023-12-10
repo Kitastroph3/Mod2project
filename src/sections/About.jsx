@@ -1,10 +1,10 @@
 import React from 'react'
-import QuickLazyFox from '../QuickLazyFox.png'
+import QuickLazyFox from '../downloads/QuickLazyFox.png'
   
 const About = () => {
   return (
       <section id="Home">
-      <img id="titleblock" src={ QuickLazyFox} alt="Quick Lazy Fox"/>
+      <img id="titleblock" src={QuickLazyFox} alt="Quick Lazy Fox"/>
       </section>
   )
 }

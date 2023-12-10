@@ -7,11 +7,10 @@
 
 @font-face {
   font-family: fira;
-  src: url(FiraSans-Regular.ttf);
+  src: url(./downloads/FiraSans-Regular.ttf);
 }
 
 body, html {
-  /* background-image: url(gridbg1.png); */
   background-position: center;
   background-repeat: repeat;
   display: flex;
@@ -34,7 +33,7 @@ body, html {
 }
 
 #Home {
-  background-image: url(clouds.png);
+  background-image: url(./downloads/clouds.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -147,8 +146,6 @@ a:visited {
   text-decoration: none;
   color: white;
 }
-
-
 
 #mainContainer {
   position: relative;
