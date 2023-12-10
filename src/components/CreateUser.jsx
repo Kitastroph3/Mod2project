@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { faker } from '@faker-js/faker';
+// import dudePicsArray from '../models/dudePicsArray';
+// import femalePicsArray from '../models/femalePicsArray;'
+
 
 const CreateUser = () => {
   const [personas, setPersonas] = useState([]);
@@ -101,8 +104,11 @@ const CreateUser = () => {
   //================================Array of generate Personas
   const currentPersona = personas[currentIndex];
 
+  //================================
+
   return (
     <div className="User">
+    {/* will not work unless compoenent is wrapped. Checks for "truthy value" */}
       {currentPersona && (
         <div className='bg'>
           <div className="userName">{currentPersona.firstName} {currentPersona.lastName}</div>
