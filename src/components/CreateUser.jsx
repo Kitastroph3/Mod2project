@@ -121,28 +121,29 @@ const CreateUser = () => {
     <div className="User">
     {/* will not work unless compoenent is wrapped. Checks for "truthy value" */}
       {currentPersona && (
-        <div className='personCard'>
           <div className='bg'>
             <div className='personinfo'>
-              <div className="userName">{currentPersona.firstName} {currentPersona.lastName}</div>
-              <div className='userInfo'>Age: {currentPersona.dob.age}</div>
-              <div className='userInfo'>Birthday: {currentPersona.dob.birthday}</div>
-              <div className='userInfo'>Location: {currentPersona.location.city}, {currentPersona.location.state}</div>
-              <div className='userInfo'>Job: {currentPersona.jobTitle}</div>
-              <div className='userInfo'>Bio: {currentPersona.bio}</div>
-              <div className='userInfo'>Likes: {currentPersona.music}</div>
+              <div className='left'>
+                <div className="userName">{currentPersona.firstName} {currentPersona.lastName}</div>
+                <div className='userInfo'><b>Age:</b> {currentPersona.dob.age}</div>
+                <div className='userInfo'><b>Birthday:</b> {currentPersona.dob.birthday}</div>
+                <div className='userInfo'><b>Location:</b> {currentPersona.location.city}, {currentPersona.location.state}</div>
+                <div className='userInfo'><b>Job:</b> {currentPersona.jobTitle}</div>
+                <div className='userInfo'><b>Bio:</b> {currentPersona.bio}</div>
+                <div className='userInfo'><b>Likes:</b> {currentPersona.music}</div>
+              </div>
+              <div className="userButtons">
+                <button className='peepbtns' id="btnback" onClick={handlePrevious}>Previous</button>
+                <button className='peepbtns' id="newbtn" onClick={handleNext}>Create</button>
+              </div>
             </div>
             <div>
               <img className="avatar" src={currentPersona.avatar} alt={currentPersona.lastName} />
             </div>
-          </div>
         </div>
       )}
 
-      <div id="userButtons">
-        <button className='peepbtns' id="btnback" onClick={handlePrevious}>Previous</button>
-        <button className='peepbtns' id="newbtn" onClick={handleNext}>Create</button>
-      </div>
+
     </div>
   );
 };

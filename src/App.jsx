@@ -5,6 +5,7 @@ import TopNav from './components/TopNav';
 import About from "./sections/About";
 import Users from './sections/Users';
 import ColorScheme from "./sections/ColorScheme";
+import "./styles/User.css";
   
 function App () {
   return (

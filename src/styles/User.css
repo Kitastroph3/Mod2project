@@ -1,0 +1,93 @@
+/* 
+--#mainContainer
+-----section #Users
+----------div .User
+-------------div .bg
+----------------div .personinfo
+---------------------div .userName
+---------------------div .userInfo (x6)
+----------------div
+---------------------img .avatar
+-------------div #userButtons
+----------------.peepbtns
+---------------------.btnback
+---------------------.newbtn
+*/
+* {
+    box-sizing: border-box;
+}
+
+  .Users{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+   .bg {
+    display: flex;
+    justify-content: space-between;    
+    max-width: 1100px;
+    min-width: 650px;
+    margin: 1rem auto;
+    box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.6%;
+    background: #fff;
+    line-height: 1.45;
+    border-radius: 15px;
+    overflow: hidden;
+    padding-inline-start: 10px;
+    gap: 20px;
+   }  
+
+   .avatar {
+    height: 250px;
+    display: block;
+  }
+
+  .personInfo {
+    color: #555;
+    font-size: 13px;
+    position: relative;
+    display: flex;
+    flex-basis: 60%;
+    padding-inline-end: 10px;
+  }
+
+  .User {
+    display: grid;
+  }
+
+  .userName {
+    font-weight: bold;
+    font-size: larger;
+    line-height: 2em;
+  }
+
+  .userButtons {
+    position: absolute;
+    display: flex;
+    margin-top: 35px;
+    justify-content: left;
+  }
+
+  .peepbtns {
+    font-family: bebas;
+    width: 92px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    font-size: 12pt;
+    letter-spacing: .25em;
+    padding-left: 0%;
+  }
+
+  .peepbtns:hover {
+    cursor: pointer;
+    color: rgb(115, 113, 113);
+  }
+   
+  b {
+    font-family: bebas;
+    letter-spacing: .08em;
+  }
