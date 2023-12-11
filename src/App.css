@@ -81,6 +81,7 @@ footer {
   margin-top: 100px;
   text-align: center;
   font-family: bebas;
+  height: 40px;
 }
 
 #aboutArticles {
@@ -97,10 +98,7 @@ footer {
   align-items: center;
   justify-content: center;
   max-width: 900px;
-}
-
-#alt{
-  flex-direction: row-reverse;
+  gap: 30px;
 }
 
 .articleimg {
@@ -120,8 +118,8 @@ footer {
 .articleinfowrap {
   display: flex;
   flex-direction: column;
+  padding-left: 20px;
   text-align: right;
-  padding-left: 10px;
 }
 
 h1 {
@@ -129,4 +127,23 @@ h1 {
   padding-left: 40px;
   line-height: 0;
   margin-bottom: 8px;
+}
+
+#alt{
+  flex-direction: row-reverse;
+}
+
+h5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: bebas;
+  font-size: 40pt;
+  text-shadow: 1px 1px 1px;
+  line-height: .1em;
+  margin-bottom: 50px;
+}
+
+p {
+  font-size: 10pt;
 }
