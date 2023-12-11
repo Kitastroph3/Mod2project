@@ -6,6 +6,8 @@ import About from "./sections/About";
 import Users from './sections/Users';
 import ColorScheme from "./sections/ColorScheme";
 import "./styles/User.css";
+import Footer from './components/Footer';
+
   
 function App () {
   return (
@@ -15,9 +17,10 @@ function App () {
         <Routes>
           <Route path="/" element={<About />} /> 
           <Route path="/users" element={<Users/>}/> 
-          <Route path="/colors" element={<ColorScheme/>}/>
-        </Routes>
+          <Route path="/colors" element={<ColorScheme />} /></Routes>
+          <Footer />
       </div>
+      
     </div>
   )
 }

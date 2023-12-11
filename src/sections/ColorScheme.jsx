@@ -4,7 +4,8 @@ import Colors from '../components/Colors'
 const ColorScheme = () => {
   return (
       <section id="colorContainer">
-          <Colors />
+      <Colors />
+      
       </section>
   )
 }

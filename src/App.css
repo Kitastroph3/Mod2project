@@ -188,3 +188,16 @@ a:visited {
 .article {
   display: inline-block;
 }
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(31, 31, 31);
+  color: white;
+  margin-top: 100px;
+  text-align: center;
+  font-family: bebas;
+}
