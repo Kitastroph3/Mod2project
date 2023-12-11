@@ -4,6 +4,10 @@
   justify-content: center;
   margin: 5vh
 } */
+@font-face {
+  font-family: playfair;
+  src: url(./downloads/PlayfairDisplay-ExtraBoldItalic.ttf)
+}
 
 @font-face {
   font-family: fira;
@@ -17,56 +21,53 @@
 
 body, html {
   background-position: center;
-  background-repeat: repeat;
   display: flex;
   flex-direction: column;
   font-family: Verdana;
-  height: 100;
-  width: 100;
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  flex-shrink: 0;
   background-color: rgb(231, 230, 226);
-}
-
-#colorPicker {
-  margin: 20px;
-}
-
-#layout {
-  display: flex;
 }
 
 #Home {
   background-image: url(./downloads/clouds.png);
-  background-position: top 35%;
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center 60px;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  margin-top: 40px;
+  width: 100%;
 }
 
-#intro {
+#titleblock{
+  margin-top: 140px;
+}
+
+/* #intro {
   height: 500px;
   width: 600px;
-}
-
-/* #page {
-  display: block;
-  color: white;
 } */
 
-
+#tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 80px;
+  padding-top: 30px;
+  font-size: 20pt;
+  font-family: playfair;
+  font-weight: 500;
+}
 
 #mainContainer {
   position: relative;
-  top: 60px;
-}
-
-.article {
-  display: inline-block;
+  top: 40px;
 }
 
 footer {
@@ -83,12 +84,49 @@ footer {
 }
 
 #aboutArticles {
-  margin-top: 15%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-top: 80px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .article {
-  display: grid;
+  display: flex;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+}
 
+#alt{
+  flex-direction: row-reverse;
+}
+
+.articleimg {
+  height: 200px;
+}
+
+.articleimgwrap {
+  display: block;
+  background-color: rgb(194, 162, 150);
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-left: 30px; 
+  width: 300px;
+}
+
+.articleinfowrap {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  padding-left: 10px;
+}
+
+h1 {
+  text-align: left;
+  padding-left: 40px;
+  line-height: 0;
+  margin-bottom: 8px;
 }

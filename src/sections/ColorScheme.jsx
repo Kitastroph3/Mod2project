@@ -12,6 +12,7 @@ const ColorScheme = () => {
       />
       <Article
         name="Monochromatic"
+        id="alt"
         info="Monochromatic color palettes are based on a single color paired with various shades and tints. Like analogous palettes, monochromatic palettes can be very pleasing to look at. However, it's a good idea to add a complementary color to a monochromatic palette in web design in order to draw attention to important elements."
       />
       <Article
@@ -20,6 +21,7 @@ const ColorScheme = () => {
       />
       <Article
         name="Complementary"
+        id="alt"
         info="Complementary color palettes contain colors on opposite ends of the color wheel. These palettes are very effective for web design because they create visual balance and tension. If the colors are used equally however, the tension can be too high. Instead, choose one of the complementary colors as the primary brand color, and use the other as an accent color."
       />
         </section>
