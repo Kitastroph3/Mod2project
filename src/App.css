@@ -39,7 +39,7 @@ body, html {
 
 #Home {
   background-image: url(./downloads/clouds.png);
-  background-position: center;
+  background-position: top 35%;
   background-size: contain;
   background-repeat: no-repeat;
   display: flex;
@@ -94,7 +94,7 @@ header {
   justify-content: flex-end;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-right: 40px;
+  padding-right: 20px;
   /* position: relative; */
 }
 
@@ -132,8 +132,12 @@ a:visited {
 
 #colorContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 4%;
 }
 
 #apiInputs {
@@ -200,4 +204,15 @@ footer {
   margin-top: 100px;
   text-align: center;
   font-family: bebas;
+}
+
+#aboutArticles {
+  margin-top: 15%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.article {
+  display: grid;
+
 }
