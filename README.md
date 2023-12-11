@@ -1,5 +1,10 @@
 # Front End App
 
+![screenshot main](./src/downloads/Screenshot%202023-12-11%20100045.png)
+
+![screenshot main](./src/downloads/Screenshot%20Profiles.png)
+
+
 ## About
 
 This project was designed using React and includes three APIs. For my project, I wanted to build something that would also act as a cheat sheet for me when working on the front end of websites so I decided to include APIs i a way related to front end design and user research. 
