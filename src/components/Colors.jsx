@@ -96,17 +96,29 @@ const Colors = () => {
       <div id="colorOutput">
         {/* 3 Output */}
         <div id="layout">
-          <div className="color" style={{ backgroundColor: color1}}>
-            <div className='iconfill' onClick={invert}></div>
+          <div id="one">
+            <div className="color" style={{ backgroundColor: color1}}>
+              <div className='iconfill' onClick={invert}></div>
+            </div>
+            <div className='colorValue'>{ color1 }</div>
           </div>
-          <div className="color" style={{ backgroundColor: color2 }}>
-            <div className='iconfill' onClick={invert}></div>
+          <div id="two">
+            <div className="color" style={{ backgroundColor: color2 }}>
+              <div className='iconfill' onClick={invert}></div>
+            </div>
+            <div className='colorValue'>{ color2 }</div>
           </div>
-          <div className="color" style={{ backgroundColor: color3 }}>
-            <div className='iconfill' onClick={invert}></div>
+          <div>
+            <div className="color" style={{ backgroundColor: color3 }}>
+              <div className='iconfill' onClick={invert}></div>
+            </div>
+            <div className='colorValue'>{ color3 }</div>
           </div>
-          <div className="color" style={{ backgroundColor: color4 }}>
-            <div className='iconfill' onClick={invert}></div>
+          <div>
+            <div className="color" style={{ backgroundColor: color4 }}>
+              <div className='iconfill' onClick={invert}></div>
+            </div>
+            <div className='colorValue'>{ color4 }</div>
           </div>
         </div>
       </div>

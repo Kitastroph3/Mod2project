@@ -43,8 +43,13 @@ header {
     font-family: fira;
     align-items: right;
     font-size: 12pt;
+    cursor: pointer;
   }
   
+  select.selection option:hover {
+    box-shadow: 0 0 10px 100px #d8d8d8 inset;
+  }
+
   h2{
     font-family: bebas;
     font-weight: 400;
