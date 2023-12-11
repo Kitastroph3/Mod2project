@@ -1,11 +1,13 @@
 import React from 'react';
-import "./App.css";
 import { Route, Routes } from 'react-router-dom';
+import "./App.css";
+import "./styles/Header.css"
+import "./styles/User.css";
+import "./styles/Colors.css";
 import TopNav from './components/TopNav';
 import About from "./sections/About";
 import Users from './sections/Users';
 import ColorScheme from "./sections/ColorScheme";
-import "./styles/User.css";
 import Footer from './components/Footer';
 
   

@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer>
-      <>Images and words</>
+      <>designed by Kit</>
     </footer>
   )
 }

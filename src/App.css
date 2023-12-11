@@ -53,140 +53,16 @@ body, html {
   width: 600px;
 }
 
-.color {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  margin: 15px;  
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-}
-
-.iconfill {
-  background-size: contain;
-  background-image: url(https://cdn1.iconfinder.com/data/icons/construction-tools-glyph-silhouettes/300/225846415Untitled-3-512.png);
-  height: 80px;
-  width: 80px;
-}
-
-
-
-header {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  position: fixed;
-  width: 100%;
-  padding-left: 15px;
-  color: white;
-  top: 0;
-  height: 50px;
-  background-color: rgb(31, 31, 31);
-  z-index: 1;
-  font-family: fira;
-  /* box-shadow: 10x px 10px rgb(105, 93, 93); */
-}
-
-#navcontainer{
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-right: 20px;
-  /* position: relative; */
-}
-
-#navcontainer > * {
-  display: inline-block;
-  padding-left:20px;
-}
-
-h2{
-  font-family: bebas;
-  font-weight: 400;
-  font-size: 24pt;
-  line-height: .2em;
-}
-
-#page {
+/* #page {
   display: block;
   color: white;
-}
+} */
 
-a:link {
-  text-decoration: none;
-  color: white;
-}
 
-a:visited {
-  text-decoration: none;
-  color: white;
-}
 
 #mainContainer {
   position: relative;
   top: 60px;
-}
-
-#colorContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-left: 2%;
-  margin-right: 2%;
-  margin-top: 4%;
-}
-
-#apiInputs {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#hexColor {
-  width: 141px;
-  padding-left: 8px;
-  height:25px;
-  font-family: MR;
-  border: none;
-}
-
-#colorBtn {
-  height: 30px;
-  width: 151px;
-  font-family: Verdana;
-  margin-left: 2px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-}
-
-.colorGrid {
-  display: grid;
-  grid-template-columns: 55% 45%;
-  width: 375px;
-  height: 35px;
-  align-items: center;
-  margin: 5px;
-  font-family: Verdana;
-}
-
-#modeSelect {
-  height: 30px;
-  width: 175px;
-  font-family: Verdana;
-  padding-left: 3px;
-  padding-right: 3px;
-  border: none;
-}
-
-#layout {
-  margin: 30px;
 }
 
 .article {

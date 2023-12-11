@@ -33,15 +33,15 @@ function TopNav() {
         </Link>
 
         <div id="resources">
-          <select value={selectedResource} onChange={ handleChange}>
-            <option value="">Resources</option>
-            <option value="https://www.thecolorapi.com/docs">Color API</option>
-            <option value="https://zipcodebase.com/">Zip Code API</option>
-            <option value="https://randomuser.me/">Random User API</option>
-            <option value="https://www.remove.bg/">Background Remover</option>
-            <option value="https://faker.readthedocs.io/en/master/#">Faker</option>
-            <option value="https://perchance.org/ai-photo-generator">Perchance</option>
-            <option value="https://www.justinmind.com/blog/awesome-lorem-ipsum-alternatives/">Lorem alts</option>
+          <select className="resourceBox" value={selectedResource} onChange={ handleChange}>
+            <option className="selection" value="">Resources</option>
+            <option className="selection" value="https://www.thecolorapi.com/docs">Color API</option>
+            <option className="selection" value="https://zipcodebase.com/">Zip Code API</option>
+            <option className="selection" value="https://randomuser.me/">Random User API</option>
+            <option className="selection" value="https://www.remove.bg/">Background Remover</option>
+            <option className="selection" value="https://faker.readthedocs.io/en/master/#">Faker</option>
+            <option className="selection" value="https://perchance.org/ai-photo-generator">Perchance</option>
+            <option className="selection" value="https://www.justinmind.com/blog/awesome-lorem-ipsum-alternatives/">Lorem alts</option>
           </select>
         </div>
         </nav>

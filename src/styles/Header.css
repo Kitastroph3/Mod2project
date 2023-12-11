@@ -1,0 +1,82 @@
+header {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: fixed;
+    width: 100%;
+    padding-left: 15px;
+    color: white;
+    top: 0;
+    height: 50px;
+    background-color: rgb(31, 31, 31);
+    z-index: 1;
+    font-family: fira;
+    /* box-shadow: 10x px 10px rgb(105, 93, 93); */
+  }
+  
+  #title{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  #navcontainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    height: inherit;
+    /* position: relative; */
+  }
+  
+  #navcontainer > * {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  .resourceBox {
+    background-color: rgb(31, 31, 31);
+    border: none;
+    color: white;
+    padding: 0;
+    font-family: fira;
+    align-items: right;
+    font-size: 12pt;
+  }
+  
+  h2{
+    font-family: bebas;
+    font-weight: 400;
+    font-size: 24pt;
+    line-height: .2em;
+  }
+
+  .color {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 15px;  
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  .iconfill {
+    background-size: contain;
+    background-image: url(https://cdn1.iconfinder.com/data/icons/construction-tools-glyph-silhouettes/300/225846415Untitled-3-512.png);
+    height: 80px;
+    width: 80px;
+  }
+
+  a:link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: white;
+  }

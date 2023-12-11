@@ -1,0 +1,59 @@
+#colorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 4%;
+  }
+  
+  #apiInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #hexColor {
+    width: 141px;
+    padding-left: 8px;
+    height:25px;
+    font-family: MR;
+    border: none;
+  }
+  
+  #colorBtn {
+    height: 30px;
+    width: 151px;
+    font-family: Verdana;
+    margin-left: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  
+  .colorGrid {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    width: 375px;
+    height: 35px;
+    align-items: center;
+    margin: 5px;
+    font-family: Verdana;
+  }
+  
+  #modeSelect {
+    height: 30px;
+    width: 175px;
+    font-family: Verdana;
+    padding-left: 3px;
+    padding-right: 3px;
+    border: none;
+  }
+  
+  #layout {
+    margin: 30px;
+  }
+  
