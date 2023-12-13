@@ -84,6 +84,24 @@ footer {
   height: 40px;
 }
 
+.icon {
+  height: 25px;
+  padding-left: 10px;
+}
+
+#icon1 {
+  height: 22px;
+}
+
+.icons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  bottom: 1px;
+}
+
 #aboutArticles {
   margin-top: 80px;
   margin-left: 20px;
@@ -147,3 +165,4 @@ h5 {
 p {
   font-size: 10pt;
 }
+
