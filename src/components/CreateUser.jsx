@@ -93,7 +93,7 @@ const CreateUser = () => {
   //call the makepersona function to run one the componenet loads
   useEffect(() => {
     makePersona();
-  }, []);
+  }, );
 
   //================================================buttons
   const handlePrevious = () => {
