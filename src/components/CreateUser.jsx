@@ -26,7 +26,6 @@ const CreateUser = () => {
   //create randomized location to attach to user
   const getLocation = async () => {
     const zipCode = faker.location.zipCode('#####');
-    // const apikey = "27738e80-9554-11ee-82ee-999cd3256f0f";
     console.log(zipCode)
     try {
       const response = await axios.get(`https://app.zipcodebase.com/api/v1/search?apikey=${process.env.REACT_APP_API_KEY}&codes=${zipCode}&country=us`);
